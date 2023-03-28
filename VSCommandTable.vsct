@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h" />
+	<Extern href="vsshlids.h" />
+	<Include href="KnownImageIds.vsct" />
+	<Include href="VSGlobals.vsct" />
+
+	<Commands package="VsCompTool">
+		<Groups>
+
+			<Group guid="VsCompTool" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="ItemNode" />
+			</Group>
+
+			<Group guid="VsCompTool" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="FolderNode" />
+			</Group>
+
+			<Group guid="VsCompTool" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="CodeWindow.TextEditGroup" />
+			</Group>
+
+			<Group guid="VsCompTool" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="ProjectNode.MultiProjectBuildGroup" />
+			</Group>
+
+			<Group guid="VsCompTool" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="Tools" />
+			</Group>
+
+			<!--<Group guid="guidVsCompToolPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+			</Group>-->
+		</Groups>
+
+		<!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+		<Buttons>
+			<Button guid="VsCompTool" id="Compare" priority="0x0100" type="Button">
+				<Parent guid="VsCompTool" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="CompareFiles" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Compare Selected</ButtonText>
+					<LocCanonicalName>.VsCompTool.Compare</LocCanonicalName>
+				</Strings>
+			</Button>
+
+			 
+
+			<!--<Button guid="guidVsCompToolPackageCmdSet" id="cmdidCommand1" priority="0x0100" type="Button">
+				<Parent guid="guidVsCompToolPackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Invoke Command1</ButtonText>
+				</Strings>
+			</Button>-->
+		</Buttons>
+		<!--<Bitmaps>
+			<Bitmap guid="guidImages" href="Resources\Command1.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+		</Bitmaps>-->
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="VsCompTool" value="{7ecfef92-365c-45d9-9b8f-1d74d43925ce}">
+			<IDSymbol name="MyMenuGroup" value="0x0001" />
+			<IDSymbol name="Compare" value="0x0100" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{aa9e628d-a118-4a7b-ad58-8a2a89354ab8}" name="guidVsCompToolPackageCmdSet">
+			<IDSymbol value="4128" name="MyMenuGroup" />
+			<!--<IDSymbol value="256" name="cmdidCommand1" />-->
+		</GuidSymbol>
+
+		<!--<GuidSymbol value="{c1a88a35-cac1-4098-864f-6181543dd5f6}" name="guidImages">
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>-->
+	</Symbols>
+</CommandTable>
